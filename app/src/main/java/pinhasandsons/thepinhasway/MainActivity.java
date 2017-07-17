@@ -123,21 +123,28 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setMessage("הנחיות קוליות פנחס ובניו הותקנו בהצלחה!\n" +
-                    "נא ודא ששפת השמע המוגדרת בwaze היא \"עברית\".")
-                    .setCancelable(false)
-                    .setNeutralButton("ובניו!", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.dismiss();
-                        }
-                    });
-            AlertDialog alert = builder.create();
-            alert.show();
+            alertMessageWithDismissButton("הנחיות קוליות פנחס ובניו הותקנו בהצלחה!\n" +
+                    "נא ודא ששפת השמע המוגדרת בwaze היא \"עברית\".", "ובניו!");
+
         }
+    }
+
+    private void alertMessageWithDismissButton(String alertMessage, String dismissButton){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage(alertMessage)
+                .setCancelable(false)
+                .setNeutralButton(dismissButton, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 
     private boolean backupAndCopyFromAssets(String destDir, String backupDir) {
+        Toast.makeText(getApplicationContext(), "(סבלנות, הפעולה לוקחת מספר שניות)", Toast.LENGTH_LONG).show();
         AssetManager assetManager = getAssets();
         if (assetManager == null){
             Log.e(LOG_TAG_NAME, "no assets");

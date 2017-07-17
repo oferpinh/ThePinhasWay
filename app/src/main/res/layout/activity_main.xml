@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" tools:context=".MainActivity"
-    android:background="#FFB54C">
+    android:background="@drawable/shutterstock_117277783">
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,46 +16,47 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/abc_action_bar_default_height_material"
-            android:layout_marginBottom="@dimen/abc_action_button_min_width_overflow_material"
+            android:layout_height="90dp"
+            android:layout_marginBottom="20dp"
             android:onClick="openBrowser"
-            android:src="@drawable/full_logo"
+            android:src="@drawable/white_logo"
             android:tag="http://facebook.com/oferpinhas.music"
             android:visibility="visible" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="החלף להנחיות פנחס ובניו"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/replace_waze_logo"
             android:id="@+id/switch_to_pinhas"
             android:layout_above="@+id/button"
             android:layout_centerHorizontal="true"
             android:onClick="switchToPinhasSounds"
             android:layout_gravity="center_horizontal"
-            android:textStyle="bold"
             android:longClickable="false"
             style="@style/TextAppearance.AppCompat.Large"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:singleLine="false"
+            android:layout_marginTop="30dp"
             android:clickable="true" />
 
-        <TextView
-            android:text="(סבלנות, הפעולה לוקחת מספר שניות)"
-            android:layout_width="wrap_content"
+        <TextView android:text="נא ודא ששפת השמע המוגדרת בwaze היא עברית"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/patience"
+            android:id="@+id/explanation"
             android:layout_above="@+id/textView"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:gravity="center_horizontal"
+            android:visibility="invisible"
+            android:layout_marginTop="10dp"
+            android:textColor="#ffffff"
             android:layout_gravity="center_horizontal"
-            android:textSize="12dp" />
+            android:textStyle="bold" />
 
         <Button
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:text="החזר הנחיות מקוריות"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/dismiss_button"
             android:id="@+id/button"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
@@ -63,7 +64,7 @@
             android:clickable="true"
             android:longClickable="false"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/abc_edit_text_inset_top_material"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="@dimen/abc_action_bar_overflow_padding_end_material" />
 
         <!--<ProgressBar-->
@@ -77,80 +78,70 @@
         <!--android:layout_marginBottom="@dimen/abc_dialog_padding_top_material" />-->
 
 
-        <TextView android:text="נא ודא ששפת השמע המוגדרת בwaze היא עברית"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/explanation"
-            android:layout_above="@+id/textView"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal"
-            android:visibility="invisible"
-            android:layout_marginTop="@dimen/abc_floating_window_z"
-            android:textColor="#ffffff"
-            android:layout_gravity="center_horizontal"
-            android:textStyle="bold" />
 
-        <TextView
-            android:text="מה קורה כאן?"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/what"
-            android:layout_above="@+id/textView"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal|right"
-            android:textSize="12dp"
-            android:layout_marginTop="@dimen/abc_action_bar_icon_vertical_padding_material"
-            android:gravity="right" />
-        <TextView
-            android:text="האפליקציה מחליפה ההנחיות הקוליות של waze להנחיות קוליות של ההרכב 'פנחס ובניו'. שימו לב שתמיד תוכלו לחזור חזרה על ידי לחיצה על 'החזר הנחיות מקוריות'."
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/explain_app"
-            android:layout_above="@+id/textView"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:textSize="12dp"/>
 
-        <TextView
-            android:text=" אין המפתח אחראי לכל נזק שנגרם או שנטען שנגרם, במישרין או בעקיפין, כתוצאה מהתקנת או שימוש באפליקציה."
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/disclaimer"
-            android:layout_above="@+id/textView"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="right"
-            android:textSize="9dp"
-            android:layout_marginTop="@dimen/abc_action_bar_icon_vertical_padding_material" />
+        <!--<TextView-->
+            <!--android:text="מה קורה כאן?"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/what"-->
+            <!--android:layout_above="@+id/textView"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_gravity="center_horizontal|right"-->
+            <!--android:textSize="12dp"-->
+            <!--android:layout_marginTop="@dimen/abc_action_bar_icon_vertical_padding_material"-->
+            <!--android:gravity="right" />-->
+        <!--<TextView-->
+            <!--android:text="האפליקציה מחליפה ההנחיות הקוליות של waze להנחיות קוליות של ההרכב 'פנחס ובניו'. שימו לב שתמיד תוכלו לחזור חזרה על ידי לחיצה על 'החזר הנחיות מקוריות'."-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/explain_app"-->
+            <!--android:layout_above="@+id/textView"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:textSize="12dp"/>-->
+
+        <!--<TextView-->
+            <!--android:text=" אין המפתח אחראי לכל נזק שנגרם או שנטען שנגרם, במישרין או בעקיפין, כתוצאה מהתקנת או שימוש באפליקציה."-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/disclaimer"-->
+            <!--android:layout_above="@+id/textView"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_gravity="right"-->
+            <!--android:textSize="9dp"-->
+            <!--android:layout_marginTop="@dimen/abc_action_bar_icon_vertical_padding_material" />-->
 
 
     </LinearLayout>
 
-    <TextView
-        android:text="לעמוד הפייסבוק של פנחס ובניו:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal"
-        android:layout_above="@+id/imageView2"
-        android:tag="http://facebook.com/oferpinhas.music"
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageView2"
+        android:src="@drawable/our_site"
+        android:tag="http://www.oferpinhas.com"
         android:onClick="openBrowser"
-        android:layout_centerHorizontal="true" />
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"/>
 
     <ImageView
-        android:layout_width="@dimen/abc_action_bar_progress_bar_size"
-        android:layout_height="@dimen/abc_action_bar_progress_bar_size"
-        android:id="@+id/imageView2"
-        android:src="@drawable/facebook_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageView3"
+        android:src="@drawable/our_facebook"
         android:tag="http://facebook.com/oferpinhas.music"
         android:onClick="openBrowser"
         android:layout_gravity="bottom"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"/>
 
 
 </RelativeLayout>
